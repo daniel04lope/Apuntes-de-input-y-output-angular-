@@ -3,13 +3,19 @@
 
 <div class="row">
   <div class="col">
-    <!-- Esta parte se encarga de establecer el dato enviado a otra clase hijo para que puedea usarlo-->
+    <!-- onDelete-->
     <dbz-list [characterList]="characters"
-    (onDelete)="onDeleteCharacter($event)"></dbz-list>
-<!--Esta parte se encarga de usar el evento emitido por el hijo y que el padre lo reciba para que el actualice los datos-->
+              (onDelete)="onDeleteCharacter($event)"></dbz-list>
+
+
+
   </div>
+
   <div class="col">
-<!--Esto se encarga de usar el evento emitido por el hijo para  que este actualice para crear el nuevo personaje-->
+
     <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+
+
+
   </div>
 </div>

@@ -1,9 +1,7 @@
-import { Component, EventEmitter, Input, Output, output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { personajes } from '../interface/character.interface';
 import { OutletContext } from '@angular/router';
-
 // Se establece el selector, el html y el css que usara este componente
-
 @Component({
   selector: 'dbz-list',
   templateUrl: './list.component.html',
@@ -21,12 +19,12 @@ export class ListComponent {
 
 //Se establece el output para que se pueda comunicar el hijo con el padre y pasarle informacion 
 @Output()
-public onDelete: EventEmitter<number> = new EventEmitter();
+public onDelete: EventEmitter<string> = new EventEmitter();
 
 //Se establece un metodo para eliminar un personaje
-onDeteteCharacter(index:number):void{
+onDeteteCharacter(id?:string):void{
 
-   this.onDelete.emit(index);
+   this.onDelete.emit(id);
 
   }
 

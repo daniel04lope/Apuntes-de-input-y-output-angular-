@@ -1,6 +1,6 @@
 
 export interface personajes{
-    id?:Number
+    id? :string,
     nombre:string,
     poder:Number,
 
