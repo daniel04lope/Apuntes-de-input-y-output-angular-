@@ -1,4 +1,4 @@
-import { Component, numberAttribute } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,21 +6,5 @@ import { Component, numberAttribute } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  public title: string = 'Hola Mundo';
-  /*public counter = 10;
-
- increaseBy(value: number):void{
-    this.counter += value;
-  }
-
-  decrementBy(value: number):void{
-    this.counter -= value;
-  }
-
-  //hacer método para resetear el counter a 10
-
-  reset(): void{
-    this.counter =10;
-
-  }*/
+  title = 'base';
 }

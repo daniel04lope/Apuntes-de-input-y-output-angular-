@@ -1,26 +1,38 @@
-import { NgModule, Component } from '@angular/core';
+//Se establecen los imports necesarios para el buen funcionamiento del .ts
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CounterModule } from './counter/counter.module';
-import { HeroModule } from './heroes/hero.module';
-import { DbzModule } from './dbz/dbz.module';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CounterComponent } from './counter/components/counter/counter.component';
 
+import { HeroesModule } from './heroes/heroes.module';
+
+import { ListComponent } from './heroes/list/list.component';
+import { CommonModule } from '@angular/common';
+
+import { AddCharacterComponent } from './dbz/components/add-character/add-character.component';
+import { DbzModule } from './dbz/dbz.module';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent
+   //Se establecen las declaraciones
+  declarations:[
+    AppComponent,
+    ListComponent,
+    
   ],
+   //Y los imports
   imports: [
+
     BrowserModule,
-    CounterModule,
-    HeroModule,
-    DbzModule,
-  ],
+    AppRoutingModule,
+    DbzModule 
+],
+
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

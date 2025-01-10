@@ -1,21 +1,26 @@
-<p>add-character works!</p>
+
 <h4>Agregar personaje</h4>
-    <form class="row" (ngSubmit)="emitCharacter()">
-      <input type="text"
-      [(ngModel)]="character.name"
-      name="name"
-      class="form-control mb-2"
-      placeholder="Nombre">
+<!--Crea un formulario y asigna que cuando le des al boton se haga la accion de crear personaje-->
+<form class="row" (ngSubmit)="emitCharacter()">
+  <!--Establece que exista un campo en el formulario y que este tiene que ser de tipo texto
+  Ademas se le asigna que el valor sera para el personaje  -->
+  <input type="text"
+  
+         [(ngModel)]="character.nombre" 
+         name="nombre"
+         class="form-control mb-2"
+         placeholder="Nombre">
+<!--Establece que exista un campo en el formulario y que tiene que ser de tipo Number ademas 
+se le asigna que el valor introducido sera el valor de character
+-->
+  <input type="number"
+         [(ngModel)]="character.poder"
+         name="poder"
+         class="form-control mb-2"
+         placeholder="Poder">
 
-      <input type="number"
-      [(ngModel)]="character.power"
-      name="power"
-      class="form-control mb-2"
-      placeholder="placeholder">
-
-      <button type="submit" class="btn btn-primary" (click)="emitCharacter()">
-      Agregar
-    </button>
-    </form>
-
-   <!-- <pre>{{character | json}}</pre> -->
+<!--Se crea un boton para enviar los datos con el texto agregar-->
+  <button type="submit" class="btn btn-primary">
+    Agregar
+  </button>
+</form>

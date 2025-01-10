@@ -1,9 +1,13 @@
-<p>list works!</p>
+
 <h4>Listado</h4>
+<!--Se crea una lista en donde gracias al ngFor se recorre el array de los personajes y se establecen
+variables que influiran en el proceso por ejemplo: isFirst indica cual es el primero de la lista, la i indica 
+el indice, islast indica el ultimo de la lista, isEven indica si es par, isOdd indica si es impar  -->
+
 <ul class="list-group">
   <li *ngFor="
   let character of characterList;
-  let i =index;
+  let i =index; 
   let isFirst = first;
   let isLast = last;
   let isEven = even;
@@ -11,19 +15,21 @@
   "
   class="list-group-item d-flex justify-content-between
   align-items-center"
-  [ngClass]="{
-    'list-group-item-dark': isLast,
-    'list-group-item-primary': isEven
-  }">
-
+  [ngClass]="{'list-group-item-dark': isLast,'list-group-item-primary': isEven}">
+  <!--Esta parte se encarga de establecer estilos y propiedades de la lista pero lo mas importante 
+  es la linea de ngClass que establece estilos condicionales en este caso establece que si es el ultimo le aplique 
+  el list-group-item-dark al ultimo y que si es par le establezca el list-group-item-primary a ese elemento de la lista
+  -->
+<!--Esta parte se encarga de mostrar los elementos en la lista -->
   <div>
     <span class="text-primary">{{i+1}}</span>
-    <span>{{ character.name}} - </span>
+    <span>{{ character.nombre}} - </span>
     <strong>Power: </strong>
-    <span>{{character.power}}</span>
+    <span>{{character.poder}}</span>
   </div>
-
-  <button class="btn btn-danger" (click)="onDeteteCharacter(i)" >X</button>
+<!--Esta parte se encarga de que cuando se seleccione el boton se active el metodo onDetecteCharacter 
+y que asi se elimine de la lista el personaje-->
+  <button class="btn btn-danger" (click)="onDeteteCharacter(character.id)" >X</button>
 
   </li>
 </ul>

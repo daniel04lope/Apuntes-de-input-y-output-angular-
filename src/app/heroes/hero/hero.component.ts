@@ -1,42 +1,20 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-heroes-hero',
+  selector: 'hero-componente',
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
 export class HeroComponent {
+ 
+  constructor(){}
+  public nombre: string = 'Iron man'
+  public edad: Number= 30;
+  public nombrecapitalizado= this.nombre.toUpperCase();
+  private descripcion:string="Es iron man";
 
-public name: string = 'ironman';
-public age: number = 45;
-
-get capitalizadName():string{
-  return this.name.toUpperCase();
-}
-
-getHeroDescription():String{
-
-  return `${ this.name } - ${ this.age }`;
-}
-
-changeHero():void{
- this.name= 'Spiderman';
-}
-
-changeAge():void{
-
-  this.age = 25;
-
-}
-
-resetFrom():void{
-this.name = 'ironman';
-this.age = 45;
-
-/*document.querySelectorAll('h1')!.forEach(element =>{
-  element.innerHTML = '<h1>Desde Angular</h1>'
-})*/
-}
-
-}
-
+  getdescription(): string {
+    return this.descripcion;
+  }
+    
+    }
